@@ -20,13 +20,12 @@ const PageOne = () => {
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-pink-300 via-rose-200 to-yellow-100 overflow-hidden relative px-4 sm:px-6">
-
+    <div className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-gradient-to-br from-pink-300 via-rose-200 to-yellow-100 px-4 sm:px-6">
       {opened &&
         sparkles.map((_, index) => (
           <motion.div
             key={index}
-            className="absolute text-yellow-400 text-base sm:text-xl pointer-events-none"
+            className="pointer-events-none absolute text-base text-yellow-400 sm:text-xl"
             initial={{
               x: "50vw",
               y: "50vh",
@@ -48,8 +47,7 @@ const PageOne = () => {
           </motion.div>
         ))}
 
-      <div className="text-center z-10 w-full max-w-4xl">
-
+      <div className="z-10 w-full max-w-4xl text-center">
         {!opened ? (
           <>
             <motion.div
@@ -61,76 +59,40 @@ const PageOne = () => {
               }}
             >
               <motion.div
-                animate={{
-                  y: [0, -12, 0],
-                }}
+                animate={{ y: [0, -12, 0] }}
                 transition={{
                   duration: 1.5,
                   repeat: Infinity,
                 }}
                 onClick={openGift}
-                className="cursor-pointer inline-block"
+                className="inline-block cursor-pointer"
               >
-                <FaGift
-                  className="
-                    text-rose-600
-                    text-[100px]
-                    sm:text-[150px]
-                    md:text-[180px]
-                    mx-auto
-                    drop-shadow-xl
-                  "
-                />
+                <FaGift className="mx-auto text-[100px] text-rose-600 drop-shadow-xl sm:text-[150px] md:text-[180px]" />
               </motion.div>
             </motion.div>
 
             <motion.p
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                delay: 0.5,
-              }}
-              className="
-                mt-6
-                sm:mt-8
-                text-xl
-                sm:text-2xl
-                md:text-3xl
-                font-bold
-                text-rose-700
-              "
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="mt-6 text-xl font-bold text-rose-700 sm:mt-8 sm:text-2xl md:text-3xl"
             >
               Tap the gift 🎁
             </motion.p>
           </>
         ) : (
           <motion.div
-            initial={{
-              opacity: 0,
-              scale: 0.5,
-            }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-            }}
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{
               duration: 1,
               type: "spring",
               stiffness: 100,
             }}
-            className="flex flex-col items-center w-full"
+            className="flex w-full flex-col items-center"
           >
             <motion.div
-              initial={{
-                scale: 0.5,
-                rotate: -8,
-              }}
+              initial={{ scale: 0.5, rotate: -8 }}
               animate={{
                 scale: [0.5, 1.08, 1],
                 rotate: 0,
@@ -140,89 +102,36 @@ const PageOne = () => {
                 type: "spring",
                 stiffness: 100,
               }}
-              className="relative w-full flex justify-center"
+              className="relative flex w-full justify-center px-2 sm:px-0"
             >
-              <div className="absolute -inset-2 sm:-inset-3 rounded-3xl bg-white/60 blur-md" />
+              <div className="absolute -inset-2 rounded-3xl bg-white/60 blur-md sm:-inset-3" />
 
               <img
                 src={image}
                 alt="Birthday memory"
-                className="
-                  relative
-                  w-[75vw]
-                  h-[75vw]
-                  max-w-[320px]
-                  max-h-[320px]
-                  sm:w-80
-                  sm:h-80
-                  md:w-96
-                  md:h-96
-                  object-cover
-                  rounded-2xl
-                  sm:rounded-3xl
-                  border-4
-                  sm:border-8
-                  border-white
-                  shadow-2xl
-                "
+                className="relative h-auto max-h-[55vh] w-auto max-w-[88vw] rounded-2xl border-4 border-white object-contain shadow-2xl sm:max-h-[400px] sm:max-w-[320px] sm:rounded-3xl sm:border-8 md:max-h-[450px] md:max-w-[384px]"
               />
             </motion.div>
 
             <motion.h1
-              initial={{
-                opacity: 0,
-                y: 30,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                delay: 0.8,
-              }}
-              className="
-                mt-6
-                sm:mt-8
-                text-3xl
-                sm:text-4xl
-                md:text-6xl
-                font-bold
-                text-rose-700
-                leading-tight
-              "
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 }}
+              className="mt-6 text-3xl font-bold leading-tight text-rose-700 sm:mt-8 sm:text-4xl md:text-6xl"
             >
               Happy Birthday! 🎉
             </motion.h1>
 
             <motion.p
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                delay: 1.2,
-              }}
-              className="
-                mt-3
-                sm:mt-4
-                text-base
-                sm:text-xl
-                md:text-2xl
-                font-semibold
-                text-rose-600
-                leading-relaxed
-                px-2
-              "
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2 }}
+              className="mt-3 px-2 text-base font-semibold leading-relaxed text-rose-600 sm:mt-4 sm:text-xl md:text-2xl"
             >
               This little surprise is just for you 💗
             </motion.p>
           </motion.div>
         )}
-
       </div>
     </div>
   );

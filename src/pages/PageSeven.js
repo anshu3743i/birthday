@@ -3,10 +3,11 @@ import { motion } from "framer-motion";
 import { FaGift } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-import image from "../imagess/WhatsApp Image 2026-09-25 at 01.33.24.jpeg";
+import image from "../imagess/WhatsApp Image 2026-09-25 at 20.31.39.jpeg";
 
 const message =
   "hum sab ek dusre se bate krte rahe aur ek dusre ko samjahte rahe aur chahe zindagi kitni bhi badal jaye apne bonding ko kabbhi mt khone dena aur sayad yahi zindagi ko khubsurat aur jeene layak banati hai so once again with this quote Happy birthday aalu ki bori.";
+
 const PageSeven = () => {
   const [opened, setOpened] = useState(false);
   const [text, setText] = useState("");
@@ -147,7 +148,7 @@ const PageSeven = () => {
                 <img
                   src={image}
                   alt="Final birthday memory"
-                  className="w-[75vw] max-w-[320px] h-[85vw] max-h-[380px] sm:w-72 sm:h-80 md:w-[390px] md:h-[430px] object-cover rounded-[1rem] sm:rounded-[1.5rem]"
+                  className="w-[75vw] max-w-[320px] h-auto max-h-[55vh] sm:w-72 sm:max-h-[400px] md:w-[390px] md:max-h-[430px] object-contain rounded-[1rem] sm:rounded-[1.5rem]"
                 />
 
                 <div className="absolute bottom-5 sm:bottom-7 left-0 right-0 flex justify-center px-2">
