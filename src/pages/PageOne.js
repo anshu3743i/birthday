@@ -20,14 +20,13 @@ const PageOne = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-300 via-rose-200 to-yellow-100 overflow-hidden relative px-5">
+    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-pink-300 via-rose-200 to-yellow-100 overflow-hidden relative px-4 sm:px-6">
 
-      {/* Sparkles */}
       {opened &&
         sparkles.map((_, index) => (
           <motion.div
             key={index}
-            className="absolute text-yellow-400 text-xl"
+            className="absolute text-yellow-400 text-base sm:text-xl pointer-events-none"
             initial={{
               x: "50vw",
               y: "50vh",
@@ -49,8 +48,7 @@ const PageOne = () => {
           </motion.div>
         ))}
 
-      {/* Main Content */}
-      <div className="text-center z-10">
+      <div className="text-center z-10 w-full max-w-4xl">
 
         {!opened ? (
           <>
@@ -64,21 +62,33 @@ const PageOne = () => {
             >
               <motion.div
                 animate={{
-                  y: [0, -15, 0],
+                  y: [0, -12, 0],
                 }}
                 transition={{
                   duration: 1.5,
                   repeat: Infinity,
                 }}
                 onClick={openGift}
-                className="cursor-pointer"
+                className="cursor-pointer inline-block"
               >
-                <FaGift className="text-rose-600 text-[150px] mx-auto drop-shadow-xl" />
+                <FaGift
+                  className="
+                    text-rose-600
+                    text-[100px]
+                    sm:text-[150px]
+                    md:text-[180px]
+                    mx-auto
+                    drop-shadow-xl
+                  "
+                />
               </motion.div>
             </motion.div>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
               animate={{
                 opacity: 1,
                 y: 0,
@@ -86,7 +96,15 @@ const PageOne = () => {
               transition={{
                 delay: 0.5,
               }}
-              className="mt-8 text-2xl font-bold text-rose-700"
+              className="
+                mt-6
+                sm:mt-8
+                text-xl
+                sm:text-2xl
+                md:text-3xl
+                font-bold
+                text-rose-700
+              "
             >
               Tap the gift 🎁
             </motion.p>
@@ -106,10 +124,8 @@ const PageOne = () => {
               type: "spring",
               stiffness: 100,
             }}
-            className="flex flex-col items-center"
+            className="flex flex-col items-center w-full"
           >
-
-            {/* Highlighted Image */}
             <motion.div
               initial={{
                 scale: 0.5,
@@ -124,14 +140,31 @@ const PageOne = () => {
                 type: "spring",
                 stiffness: 100,
               }}
-              className="relative"
+              className="relative w-full flex justify-center"
             >
-              <div className="absolute -inset-3 rounded-3xl bg-white/60 blur-md" />
+              <div className="absolute -inset-2 sm:-inset-3 rounded-3xl bg-white/60 blur-md" />
 
               <img
                 src={image}
                 alt="Birthday memory"
-                className="relative w-72 h-72 md:w-96 md:h-96 object-cover rounded-3xl border-8 border-white shadow-2xl"
+                className="
+                  relative
+                  w-[75vw]
+                  h-[75vw]
+                  max-w-[320px]
+                  max-h-[320px]
+                  sm:w-80
+                  sm:h-80
+                  md:w-96
+                  md:h-96
+                  object-cover
+                  rounded-2xl
+                  sm:rounded-3xl
+                  border-4
+                  sm:border-8
+                  border-white
+                  shadow-2xl
+                "
               />
             </motion.div>
 
@@ -147,7 +180,16 @@ const PageOne = () => {
               transition={{
                 delay: 0.8,
               }}
-              className="mt-8 text-4xl md:text-6xl font-bold text-rose-700"
+              className="
+                mt-6
+                sm:mt-8
+                text-3xl
+                sm:text-4xl
+                md:text-6xl
+                font-bold
+                text-rose-700
+                leading-tight
+              "
             >
               Happy Birthday! 🎉
             </motion.h1>
@@ -164,11 +206,20 @@ const PageOne = () => {
               transition={{
                 delay: 1.2,
               }}
-              className="mt-4 text-xl md:text-2xl font-semibold text-rose-600"
+              className="
+                mt-3
+                sm:mt-4
+                text-base
+                sm:text-xl
+                md:text-2xl
+                font-semibold
+                text-rose-600
+                leading-relaxed
+                px-2
+              "
             >
               This little surprise is just for you 💗
             </motion.p>
-
           </motion.div>
         )}
 

@@ -28,9 +28,7 @@ const PageTwo = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-200 via-rose-100 to-yellow-100 px-5 py-10">
-
-      {/* ================= HEADING ================= */}
+    <div className="min-h-screen w-full bg-gradient-to-br from-pink-200 via-rose-100 to-yellow-100 px-4 sm:px-6 md:px-8 py-8 sm:py-10 overflow-x-hidden">
 
       <motion.h1
         initial={{
@@ -44,13 +42,10 @@ const PageTwo = () => {
         transition={{
           duration: 0.8,
         }}
-        className="text-center text-4xl md:text-5xl font-bold text-rose-600 mb-4"
+        className="text-center text-3xl sm:text-4xl md:text-5xl font-bold text-rose-600 mb-4 leading-tight"
       >
         Some Beautiful Memories 💗
       </motion.h1>
-
-
-      {/* ================= SCROLL MESSAGE ================= */}
 
       <motion.div
         initial={{
@@ -70,17 +65,14 @@ const PageTwo = () => {
             repeat: Infinity,
           },
         }}
-        className="text-right max-w-6xl mx-auto pr-2 mb-7"
+        className="text-right max-w-6xl mx-auto pr-1 sm:pr-2 mb-6 sm:mb-8"
       >
-        <p className="text-rose-500 font-semibold text-lg md:text-xl">
+        <p className="text-rose-500 font-semibold text-base sm:text-lg md:text-xl">
           Scroll karo... ↓
         </p>
       </motion.div>
 
-
-      {/* ================= IMAGES ================= */}
-
-      <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-7">
+      <div className="w-full max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 md:gap-7">
 
         {images.map((image, index) => (
           <motion.div
@@ -97,12 +89,12 @@ const PageTwo = () => {
             }}
             transition={{
               duration: 0.7,
-              delay: index * 0.25,
+              delay: index * 0.2,
               type: "spring",
               stiffness: 120,
             }}
+            className="w-full"
           >
-
             <motion.img
               src={image}
               alt={`Memory ${index + 1}`}
@@ -113,16 +105,12 @@ const PageTwo = () => {
               transition={{
                 duration: 0.3,
               }}
-              className="w-full h-56 md:h-72 object-cover rounded-2xl shadow-xl border-4 border-white"
+              className="w-full aspect-square sm:aspect-[4/5] md:aspect-auto h-auto md:h-72 object-cover rounded-xl sm:rounded-2xl shadow-xl border-2 sm:border-4 border-white"
             />
-
           </motion.div>
         ))}
 
       </div>
-
-
-      {/* ================= CONTINUE BUTTON ================= */}
 
       <motion.button
         initial={{
@@ -137,7 +125,7 @@ const PageTwo = () => {
           delay: 2.8,
         }}
         onClick={() => navigate("/page3")}
-        className="block mx-auto mt-12 px-8 py-3 bg-rose-500 text-white font-bold text-lg rounded-full shadow-lg hover:bg-rose-600 hover:scale-105 transition"
+        className="block mx-auto mt-10 sm:mt-12 px-6 sm:px-8 py-3 bg-rose-500 text-white font-bold text-base sm:text-lg rounded-full shadow-lg hover:bg-rose-600 hover:scale-105 transition"
       >
         There's More 💝
       </motion.button>

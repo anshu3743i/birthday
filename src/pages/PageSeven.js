@@ -6,8 +6,7 @@ import { useNavigate } from "react-router-dom";
 import image from "../imagess/WhatsApp Image 2026-09-25 at 01.33.24.jpeg";
 
 const message =
-  "ky msg du yad ni ara hai nind ara hai yar me milke deta hu message motki abhi ke liye happy birthday.";
-
+  "hum sab ek dusre se bate krte rahe aur ek dusre ko samjahte rahe aur chahe zindagi kitni bhi badal jaye apne bonding ko kabbhi mt khone dena aur sayad yahi zindagi ko khubsurat aur jeene layak banati hai so once again with this quote Happy birthday aalu ki bori.";
 const PageSeven = () => {
   const [opened, setOpened] = useState(false);
   const [text, setText] = useState("");
@@ -36,10 +35,7 @@ const PageSeven = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-rose-100 via-pink-200 to-orange-100 flex items-center justify-center px-5 py-10 overflow-hidden">
-
-      {/* ================= GIFT SCREEN ================= */}
-
+    <div className="min-h-screen w-full bg-gradient-to-br from-rose-100 via-pink-200 to-orange-100 flex items-center justify-center px-4 sm:px-6 py-8 sm:py-10 overflow-x-hidden">
       {!opened ? (
         <motion.div
           initial={{
@@ -57,9 +53,6 @@ const PageSeven = () => {
           onClick={openGift}
           className="text-center cursor-pointer"
         >
-
-          {/* Floating Hearts */}
-
           <motion.div
             animate={{
               y: [0, -15, 0],
@@ -69,13 +62,10 @@ const PageSeven = () => {
               duration: 2.5,
               repeat: Infinity,
             }}
-            className="text-4xl mb-4"
+            className="text-3xl sm:text-4xl mb-4"
           >
             💗✨
           </motion.div>
-
-
-          {/* Gift */}
 
           <motion.div
             animate={{
@@ -87,27 +77,19 @@ const PageSeven = () => {
               repeat: Infinity,
             }}
           >
-            <FaGift className="text-rose-500 text-[140px] mx-auto" />
+            <FaGift className="text-rose-500 text-[100px] sm:text-[140px] mx-auto" />
           </motion.div>
 
-
-          <h2 className="text-3xl font-bold text-rose-600 mt-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-rose-600 mt-6 sm:mt-8">
             The Final Surprise 🎁
           </h2>
 
-          <p className="text-rose-500 mt-3 text-lg">
+          <p className="text-rose-500 mt-2 sm:mt-3 text-base sm:text-lg">
             Open it motki 💗
           </p>
-
         </motion.div>
       ) : (
-
-        /* ================= FINAL SCREEN ================= */
-
         <div className="w-full max-w-6xl">
-
-          {/* ================= HEADING ================= */}
-
           <motion.div
             initial={{
               opacity: 0,
@@ -120,24 +102,18 @@ const PageSeven = () => {
             transition={{
               duration: 0.8,
             }}
-            className="text-center mb-10"
+            className="text-center mb-7 sm:mb-10"
           >
-            <h1 className="text-3xl md:text-5xl font-bold text-rose-600">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-rose-600 leading-tight">
               Happie Birthday Motki 🎂💗
             </h1>
 
-            <p className="text-rose-500 mt-2">
+            <p className="text-sm sm:text-base text-rose-500 mt-2">
               Okay... ab sach mein last hai 😂
             </p>
           </motion.div>
 
-
-          {/* ================= MAIN CONTENT ================= */}
-
-          <div className="flex flex-col md:flex-row-reverse items-center justify-center gap-10">
-
-            {/* ================= IMAGE ================= */}
-
+          <div className="flex flex-col md:flex-row-reverse items-center justify-center gap-8 sm:gap-10 pb-8">
             <motion.div
               initial={{
                 opacity: 0,
@@ -153,15 +129,9 @@ const PageSeven = () => {
                 duration: 1,
                 type: "spring",
               }}
-              className="relative"
+              className="relative w-full flex justify-center"
             >
-
-              {/* Glow */}
-
-              <div className="absolute -inset-5 bg-pink-300/50 blur-2xl rounded-full" />
-
-
-              {/* Photo Frame */}
+              <div className="absolute -inset-4 sm:-inset-5 bg-pink-300/50 blur-2xl rounded-full" />
 
               <motion.div
                 animate={{
@@ -172,28 +142,20 @@ const PageSeven = () => {
                   duration: 4,
                   repeat: Infinity,
                 }}
-                className="relative bg-white p-4 rounded-[2rem] shadow-2xl"
+                className="relative bg-white p-2.5 sm:p-4 rounded-[1.5rem] sm:rounded-[2rem] shadow-2xl"
               >
-
                 <img
                   src={image}
                   alt="Final birthday memory"
-                  className="w-72 h-80 md:w-[390px] md:h-[430px] object-cover rounded-[1.5rem]"
+                  className="w-[75vw] max-w-[320px] h-[85vw] max-h-[380px] sm:w-72 sm:h-80 md:w-[390px] md:h-[430px] object-cover rounded-[1rem] sm:rounded-[1.5rem]"
                 />
 
-
-                {/* Caption */}
-
-                <div className="absolute bottom-7 left-0 right-0 flex justify-center">
-                  <span className="bg-white/95 px-6 py-2 rounded-full text-rose-600 font-bold shadow-md">
+                <div className="absolute bottom-5 sm:bottom-7 left-0 right-0 flex justify-center px-2">
+                  <span className="bg-white/95 px-4 sm:px-6 py-1.5 sm:py-2 rounded-full text-rose-600 text-sm sm:text-base font-bold shadow-md">
                     Alu ki bori💗
                   </span>
                 </div>
-
               </motion.div>
-
-
-              {/* Floating Heart */}
 
               <motion.div
                 animate={{
@@ -204,13 +166,10 @@ const PageSeven = () => {
                   duration: 2.5,
                   repeat: Infinity,
                 }}
-                className="absolute -top-6 -right-6 text-5xl"
+                className="absolute -top-4 sm:-top-6 -right-2 sm:-right-6 text-3xl sm:text-5xl"
               >
                 💕
               </motion.div>
-
-
-              {/* Sparkle */}
 
               <motion.div
                 animate={{
@@ -221,15 +180,11 @@ const PageSeven = () => {
                   duration: 2,
                   repeat: Infinity,
                 }}
-                className="absolute -bottom-5 -left-5 text-4xl"
+                className="absolute -bottom-4 sm:-bottom-5 -left-2 sm:-left-5 text-2xl sm:text-4xl"
               >
                 ✨
               </motion.div>
-
             </motion.div>
-
-
-            {/* ================= MESSAGE ================= */}
 
             <motion.div
               initial={{
@@ -246,36 +201,23 @@ const PageSeven = () => {
               }}
               className="w-full md:w-1/2"
             >
-
-              {/* Message Card */}
-
-              <div className="relative bg-white/70 backdrop-blur-lg rounded-[2rem] p-7 md:p-10 shadow-2xl border border-white">
-
-                {/* Decorative Heart */}
-
-                <div className="absolute top-5 right-6 text-2xl">
+              <div className="relative bg-white/70 backdrop-blur-lg rounded-2xl sm:rounded-[2rem] p-5 sm:p-7 md:p-10 shadow-2xl border border-white">
+                <div className="absolute top-4 sm:top-5 right-4 sm:right-6 text-xl sm:text-2xl">
                   💗
                 </div>
 
-                <div className="absolute bottom-5 right-6 text-xl">
+                <div className="absolute bottom-4 sm:bottom-5 right-4 sm:right-6 text-lg sm:text-xl">
                   ✨
                 </div>
 
-
-                <h2 className="text-3xl md:text-4xl font-bold text-rose-600 mb-6">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-rose-600 mb-4 sm:mb-6">
                   Alu ki bori ke liye 💌
                 </h2>
 
-
-                {/* Typewriter Message */}
-
-                <p className="text-lg md:text-xl text-rose-900 leading-relaxed min-h-[160px]">
+                <p className="text-base sm:text-lg md:text-xl text-rose-900 leading-relaxed min-h-[140px] sm:min-h-[160px]">
                   {text}
                   <span className="animate-pulse">|</span>
                 </p>
-
-
-                {/* Final Birthday Text */}
 
                 <motion.div
                   initial={{
@@ -290,19 +232,13 @@ const PageSeven = () => {
                     delay: 4,
                     duration: 0.8,
                   }}
-                  className="mt-7 text-center"
+                  className="mt-6 sm:mt-7 text-center"
                 >
-
-                  <p className="text-2xl font-bold text-rose-600">
+                  <p className="text-xl sm:text-2xl font-bold text-rose-600">
                     Happy Birthday Motki 🎂💗
                   </p>
-
                 </motion.div>
-
               </div>
-
-
-              {/* ================= FINAL BUTTON ================= */}
 
               <motion.div
                 initial={{
@@ -314,20 +250,16 @@ const PageSeven = () => {
                 transition={{
                   delay: 5,
                 }}
-                className="flex justify-center mt-7"
+                className="flex justify-center mt-5 sm:mt-7"
               >
-
                 <button
                   onClick={() => navigate("/")}
-                  className="px-8 py-3 bg-rose-500 text-white font-bold rounded-full shadow-lg hover:bg-rose-600 hover:scale-105 transition duration-300"
+                  className="px-6 sm:px-8 py-3 bg-rose-500 text-white text-sm sm:text-base font-bold rounded-full shadow-lg hover:bg-rose-600 hover:scale-105 transition duration-300"
                 >
                   Start Again 💗
                 </button>
-
               </motion.div>
-
             </motion.div>
-
           </div>
         </div>
       )}

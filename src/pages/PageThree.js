@@ -39,9 +39,8 @@ const PageThree = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-200 via-rose-100 to-yellow-100 flex items-center justify-center px-5 py-10 overflow-hidden">
+    <div className="min-h-screen w-full bg-gradient-to-br from-pink-200 via-rose-100 to-yellow-100 flex items-center justify-center px-4 sm:px-6 py-8 sm:py-10 overflow-x-hidden">
 
-      {/* ================= GIFT SCREEN ================= */}
       {!opened ? (
         <motion.div
           initial={{ scale: 0 }}
@@ -53,7 +52,6 @@ const PageThree = () => {
           className="text-center cursor-pointer"
           onClick={openGift}
         >
-          {/* Floating Gift */}
           <motion.div
             animate={{
               y: [0, -15, 0],
@@ -63,23 +61,20 @@ const PageThree = () => {
               repeat: Infinity,
             }}
           >
-            <FaGift className="text-rose-600 text-[150px] mx-auto" />
+            <FaGift className="text-rose-600 text-[100px] sm:text-[150px] mx-auto" />
           </motion.div>
 
-          <h2 className="text-2xl font-bold text-rose-700 mt-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-rose-700 mt-6 sm:mt-8">
             A Special Surprise 🎁
           </h2>
 
-          <p className="text-rose-600 mt-2">
+          <p className="text-sm sm:text-base text-rose-600 mt-2">
             Click the gift to open
           </p>
         </motion.div>
       ) : (
+        <div className="w-full max-w-6xl flex flex-col md:flex-row items-center justify-center gap-8 sm:gap-10">
 
-        /* ================= OPENED SCREEN ================= */
-        <div className="w-full max-w-6xl flex flex-col md:flex-row items-center gap-10">
-
-          {/* ================= LEFT SIDE - IMAGE ================= */}
           <motion.div
             initial={{
               opacity: 1,
@@ -89,8 +84,6 @@ const PageThree = () => {
             }}
             className="w-full md:w-1/2 flex flex-col items-center"
           >
-
-            {/* Small Gift */}
             <motion.div
               initial={{
                 scale: 1,
@@ -102,10 +95,9 @@ const PageThree = () => {
                 duration: 0.8,
               }}
             >
-              <FaGift className="text-rose-600 text-[100px] mb-6" />
+              <FaGift className="text-rose-600 text-[70px] sm:text-[100px] mb-4 sm:mb-6" />
             </motion.div>
 
-            {/* Image Frame */}
             <motion.div
               initial={{
                 opacity: 0,
@@ -125,13 +117,10 @@ const PageThree = () => {
                 type: "spring",
                 stiffness: 90,
               }}
-              className="relative"
+              className="relative max-w-full"
             >
+              <div className="absolute -inset-2 sm:-inset-3 bg-white/60 rounded-3xl blur-md" />
 
-              {/* Soft Glow */}
-              <div className="absolute -inset-3 bg-white/60 rounded-3xl blur-md" />
-
-              {/* Photo Frame */}
               <motion.div
                 animate={{
                   rotate: [0, 1.5, -1.5, 0],
@@ -140,21 +129,19 @@ const PageThree = () => {
                   duration: 5,
                   repeat: Infinity,
                 }}
-                className="relative bg-white p-4 pb-12 rounded-xl shadow-2xl"
+                className="relative bg-white p-2.5 sm:p-4 pb-10 sm:pb-12 rounded-xl shadow-2xl"
               >
                 <img
                   src={image}
                   alt="Birthday memory"
-                  className="w-80 h-80 md:w-[390px] md:h-[390px] object-cover rounded-lg"
+                  className="w-[75vw] max-w-[320px] h-[75vw] max-h-[320px] sm:w-80 sm:h-80 md:w-[390px] md:h-[390px] object-cover rounded-lg"
                 />
 
-                {/* Caption */}
-                <p className="absolute bottom-3 left-0 right-0 text-center text-rose-600 font-bold text-lg">
+                <p className="absolute bottom-2 sm:bottom-3 left-0 right-0 text-center text-rose-600 font-bold text-sm sm:text-lg">
                   My Chatar Patar 💗
                 </p>
               </motion.div>
 
-              {/* Floating Heart */}
               <motion.div
                 animate={{
                   y: [0, -12, 0],
@@ -164,12 +151,11 @@ const PageThree = () => {
                   duration: 2.5,
                   repeat: Infinity,
                 }}
-                className="absolute -top-6 -right-6 text-4xl"
+                className="absolute -top-5 sm:-top-6 -right-4 sm:-right-6 text-3xl sm:text-4xl"
               >
                 💗
               </motion.div>
 
-              {/* Floating Sparkle */}
               <motion.div
                 animate={{
                   scale: [1, 1.3, 1],
@@ -179,15 +165,13 @@ const PageThree = () => {
                   duration: 2,
                   repeat: Infinity,
                 }}
-                className="absolute -bottom-4 -left-5 text-3xl"
+                className="absolute -bottom-3 sm:-bottom-4 -left-4 sm:-left-5 text-2xl sm:text-3xl"
               >
                 ✨
               </motion.div>
             </motion.div>
           </motion.div>
 
-
-          {/* ================= RIGHT SIDE - MESSAGE ================= */}
           <motion.div
             initial={{
               opacity: 0,
@@ -203,23 +187,19 @@ const PageThree = () => {
             }}
             className="w-full md:w-1/2 flex flex-col items-center"
           >
+            <div className="w-full bg-white/60 backdrop-blur-md rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-10 shadow-xl">
 
-            {/* Message Box */}
-            <div className="w-full bg-white/60 backdrop-blur-md rounded-3xl p-6 md:p-10 shadow-xl">
-
-              <h1 className="text-3xl md:text-4xl font-bold text-rose-600 mb-6">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-rose-600 mb-4 sm:mb-6">
                 For My Chatar patar 💗
               </h1>
 
-              <p className="text-lg md:text-xl text-rose-800 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-rose-800 leading-relaxed">
                 {text}
                 <span className="animate-pulse">|</span>
               </p>
 
             </div>
 
-
-            {/* ================= NEXT BUTTON ================= */}
             <motion.button
               initial={{
                 opacity: 0,
@@ -233,11 +213,10 @@ const PageThree = () => {
                 delay: 2,
               }}
               onClick={() => navigate("/page4")}
-              className="mt-8 px-8 py-3 bg-rose-500 text-white font-bold rounded-full shadow-lg hover:bg-rose-600 hover:scale-105 transition"
+              className="mt-6 sm:mt-8 px-6 sm:px-8 py-3 bg-rose-500 text-white text-sm sm:text-base font-bold rounded-full shadow-lg hover:bg-rose-600 hover:scale-105 transition"
             >
               Next Surprise 💝
             </motion.button>
-
           </motion.div>
 
         </div>
