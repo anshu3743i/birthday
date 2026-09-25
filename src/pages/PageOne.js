@@ -4,6 +4,7 @@ import { FaGift } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 import image from "../images/WhatsApp Image 2026-09-20 at 22.32.58.jpeg";
+import { startMusic } from "../music/music";
 
 const PageOne = () => {
   const [opened, setOpened] = useState(false);
@@ -13,6 +14,7 @@ const PageOne = () => {
 
   const openGift = () => {
     setOpened(true);
+    startMusic();
 
     setTimeout(() => {
       navigate("/page2");

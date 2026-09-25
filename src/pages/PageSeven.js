@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaGift } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { stopMusic } from "../music/music";
 
 import image from "../imagess/WhatsApp Image 2026-09-25 at 20.31.39.jpeg";
 
@@ -254,8 +255,10 @@ const PageSeven = () => {
                 className="flex justify-center mt-5 sm:mt-7"
               >
                 <button
-                  onClick={() => navigate("/")}
-                  className="px-6 sm:px-8 py-3 bg-rose-500 text-white text-sm sm:text-base font-bold rounded-full shadow-lg hover:bg-rose-600 hover:scale-105 transition duration-300"
+onClick={() => {
+  stopMusic();
+  navigate("/");
+}}                  className="px-6 sm:px-8 py-3 bg-rose-500 text-white text-sm sm:text-base font-bold rounded-full shadow-lg hover:bg-rose-600 hover:scale-105 transition duration-300"
                 >
                   Start Again 💗
                 </button>
